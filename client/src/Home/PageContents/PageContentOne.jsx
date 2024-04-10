@@ -12,7 +12,7 @@ const PageContentOne = () => {
                   Welcome to
                 </span>
                 <br />
-                <span className="text-sky-400 animated-text-2 font-mono antialiased whitespace-pre-wrap">
+                <span className="text-sky-400 animated-text-2 font-mono antialiased whitespace-pre-wrap font-semibold">
                   MRU CLUBS
                 </span>
               </h1>
@@ -22,7 +22,11 @@ const PageContentOne = () => {
                   className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                   href="#"
                 >
-                  Get Started
+                  <span className="relative inline-flex items-center">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
+                    <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+                    <span className="ml-3">Get Started</span>
+                  </span>
                 </a>
                 <a
                   className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
@@ -40,13 +44,14 @@ const PageContentOne = () => {
           display: inline-block;
           opacity: 0;
           animation: typing 2s ease-in-out forwards;
+          animation-delay: 2s;
         }
 
         .animated-text-2 {
           display: inline-block;
           opacity: 0;
           animation: typing 2s ease-in-out forwards;
-          animation-delay: 2s;
+          animation-delay: 0s;
         }
 
         @keyframes typing {

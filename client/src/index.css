@@ -28,3 +28,24 @@
   border-right: 0.15em solid white; /* Simulating the cursor */
   letter-spacing: 0.15em;
 }
+
+/* For Chromium-based browsers */
+::-webkit-scrollbar {
+  width: 8px; /* Slimmer scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background for the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Darker shade for the scrollbar thumb */
+  border-radius: 10px; /* Fully rounded ends for the pill shape */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" makes it slimmer */
+  scrollbar-color: #888 #f0f0f0; /* thumb and track color, thumb is the first color */
+}
