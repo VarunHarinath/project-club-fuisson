@@ -3,7 +3,7 @@ import React from "react";
 const PageContentOne = () => {
   return (
     <>
-      <div>
+      <div className=" cursor-default">
         <section className="bg-gray-900 text-white">
           <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div className="mx-auto max-w-3xl text-center">
@@ -42,7 +42,7 @@ const PageContentOne = () => {
           display: inline-block;
           opacity: 0;
           animation: typing 2s ease-in-out forwards;
-          animation-delay: 2s;
+          animation-delay: 1s;
         }
 
         .animated-text-2 {

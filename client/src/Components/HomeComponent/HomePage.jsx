@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <PageContentOne />
-      <div className="m-5">
+      <div className="m-5 cursor-default">
         <PageContentTwo />
       </div>
     </>
