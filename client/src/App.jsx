@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Components/NavAndFooter/Nav";
-import HomePage from "./Home/HomePage";
+import HomePage from "./Components/HomeComponent/HomePage";
 import ErrorPage from "./Components/ErrorPage";
+import EventComponent from "./Components/EventsComponents/EventComponent";
 
 function App() {
   return (
@@ -9,9 +10,11 @@ function App() {
       <BrowserRouter>
         <div>
           <Nav />
+
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={"about"} />
+            <Route path="/events" element={<EventComponent />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>

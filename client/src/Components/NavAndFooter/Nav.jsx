@@ -42,7 +42,7 @@ const Nav = () => {
 
                   <li className="group">
                     <Link
-                      to="/"
+                      to="/a"
                       className="flex items-center gap-2 text-white text-sm transition duration-500 ease-in-out hover:bg-blue-700 px-4 py-2 rounded-full"
                     >
                       <svg
@@ -65,7 +65,7 @@ const Nav = () => {
 
                   <li className="group">
                     <Link
-                      to="/b"
+                      to="/events"
                       className="flex items-center gap-2 text-white transition duration-500 ease-in-out hover:bg-blue-700 px-4 py-2 rounded-full"
                     >
                       <svg

@@ -8,13 +8,11 @@ const PageContentOne = () => {
           <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-3xl font-extrabold sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 animated-text">
-                <span className="text-white font-sans subpixel-antialiased">
-                  Welcome to
+                <span className=" text-sky-500 font-sans subpixel-antialiased">
+                  Udbava
                 </span>
                 <br />
-                <span className="text-sky-400 animated-text-2 font-mono antialiased whitespace-pre-wrap font-semibold">
-                  MRU CLUBS
-                </span>
+                <span className="text-white">CSE</span>
               </h1>
               <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed"></p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
