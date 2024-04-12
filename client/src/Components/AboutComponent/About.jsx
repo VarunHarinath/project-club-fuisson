@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -233,7 +234,9 @@ const About = () => {
           {/*  */}
           {/* Team Members Only presiident and Vice president */}
           <div>
-            <h1 className="text-white text-center mt-5">Meet our team</h1>
+            <h1 className=" text-sky-500 text-center my-5 font-semibold text-xl ">
+              Meet our team
+            </h1>
             <div class="grid grid-cols-2 gap-4 ">
               <div className="m-5  ">
                 <article className="group flex flex-col items-center">
@@ -247,11 +250,6 @@ const About = () => {
                     <h1 className="text-white text-center py-2">President</h1>
                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 text-center">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Recusandae dolores, possimus pariatur animi temporibus
-                      nesciunt praesentium dolore sed nulla ipsum eveniet
-                      corporis quidem, mollitia itaque minus soluta, voluptates
-                      neque explicabo tempora nisi culpa eius atque dignissimos.
-                      Molestias explicabo corporis voluptatem?
                     </p>
                   </div>
                 </article>
@@ -266,23 +264,64 @@ const About = () => {
                   />
 
                   <div className="p-4">
-                    <h1 className="text-white text-center py-2">President</h1>
+                    <h1 className="text-white text-center py-2">
+                      Vice - President
+                    </h1>
                     <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 text-center">
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Recusandae dolores, possimus pariatur animi temporibus
-                      nesciunt praesentium dolore sed nulla ipsum eveniet
-                      corporis quidem, mollitia itaque minus soluta, voluptates
-                      neque explicabo tempora nisi culpa eius atque dignissimos.
-                      Molestias explicabo corporis voluptatem?
                     </p>
                   </div>
                 </article>
               </div>
             </div>
           </div>
-          <div>
+          <div className="px-5 shadow-2xl">
             {/* end of president and vice president */}
             {/* CTA for other clubs */}
+            {/* for club 1  */}
+            <div>
+              <h1 className=" text-sky-500 text-center my-5 font-semibold text-xl ">
+                Club 1
+              </h1>
+              <div class="grid grid-cols-2 gap-4 ">
+                <div className="m-5  ">
+                  <article className="group flex flex-col items-center">
+                    <img
+                      alt=""
+                      src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      className="h-60 w-56 rounded-2xl object-cover shadow-xl "
+                    />
+
+                    <div className="p-4">
+                      <h1 className="text-white text-center py-2">Lead</h1>
+                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+
+                <div className="m-5">
+                  <article className="group flex flex-col items-center">
+                    <img
+                      alt=""
+                      src="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                      className="h-60 w-56 rounded-2xl object-cover shadow-xl "
+                    />
+
+                    <div className="p-4">
+                      <h1 className="text-white text-center py-2">Co - Lead</h1>
+                      <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500 text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit.
+                      </p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+            {/* end of club 1 */}
 
             {/* end of CTA */}
             {/* Stats */}
