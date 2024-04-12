@@ -3,6 +3,7 @@ import Nav from "./Components/NavAndFooter/Nav";
 import HomePage from "./Components/HomeComponent/HomePage";
 import ErrorPage from "./Components/ErrorPage";
 import EventComponent from "./Components/EventsComponents/EventComponent";
+import About from "./Components/AboutComponent/About";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={"about"} />
+            <Route path="/about" element={<About />} />
             <Route path="/events" element={<EventComponent />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>

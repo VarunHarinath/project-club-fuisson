@@ -45,7 +45,7 @@ const Nav = () => {
 
                   <li className="group">
                     <Link
-                      to="/a"
+                      to="/about"
                       className="flex items-center gap-2 text-white text-sm transition duration-500 ease-in-out hover:bg-blue-700 px-4 py-2 rounded-full"
                     >
                       <svg
@@ -145,7 +145,7 @@ const Nav = () => {
             <div className="flex items-center gap-4">
               <button
                 onClick={toggleDropdown}
-                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 md:hidden"
+                className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 md:hidden "
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -162,11 +162,7 @@ const Nav = () => {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   ) : (
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16m-16 6h16"
-                    />
+                    <path d="M21 9.5H7M21 4.5H3M21 14.5H3M21 19.5H7" />
                   )}
                 </svg>
               </button>
@@ -177,7 +173,7 @@ const Nav = () => {
                     <ul className="flex flex-col items-center gap-4 p-4">
                       <li>
                         <Link
-                          to="/asdf"
+                          to="/"
                           onClick={toggleDropdown}
                           className="flex items-center justify-start w-full rounded-full bg-transparent py-2 text-center text-white transition duration-300 ease-in-out hover:bg-blue-700"
                         >
@@ -199,7 +195,7 @@ const Nav = () => {
                       </li>
                       <li>
                         <Link
-                          to="/asdf"
+                          to="/about"
                           onClick={toggleDropdown}
                           className="flex items-center justify-start w-full rounded-full bg-transparent py-2 text-center text-white transition duration-300 ease-in-out hover:bg-blue-700"
                         >
