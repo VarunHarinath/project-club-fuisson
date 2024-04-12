@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const PageContentOne = () => {
+const PageContentOne = ({ onGetStartedClick }) => {
   return (
     <>
       <div className=" cursor-default">
@@ -16,22 +17,22 @@ const PageContentOne = () => {
               </h1>
               <p className="mx-auto mt-4 max-w-xl sm:text-xl/relaxed"></p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <a
+                <button
                   className="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-                  href="#"
+                  onClick={onGetStartedClick}
                 >
                   <span className="relative inline-flex items-center">
                     <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-sky-400 opacity-75"></span>
                     <span className="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
                     <span className="ml-3">Get Started</span>
                   </span>
-                </a>
-                <a
+                </button>
+                <Link
                   className="block w-full rounded border border-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-blue-600 focus:outline-none focus:ring active:bg-blue-500 sm:w-auto"
-                  href="#"
+                  to="/a"
                 >
-                  Learn More
-                </a>
+                  About Us
+                </Link>
               </div>
             </div>
           </div>
