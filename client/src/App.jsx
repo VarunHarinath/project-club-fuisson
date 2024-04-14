@@ -4,6 +4,7 @@ import HomePage from "./Components/HomeComponent/HomePage";
 import ErrorPage from "./Components/ErrorPage";
 import EventComponent from "./Components/EventsComponents/EventComponent";
 import About from "./Components/AboutComponent/About";
+import Contact from "./Components/ContactComponet/Contact";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<EventComponent />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
