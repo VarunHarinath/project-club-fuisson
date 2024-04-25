@@ -49,17 +49,21 @@ const EventComponent = () => {
               <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                 <a href="#">
                   <h3 className="font-bold uppercase text-gray-900">
-                    Finding the right guitar for your style - 5 tips
+                    Hacathon 2k24
                   </h3>
                 </a>
 
                 <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Recusandae dolores, possimus pariatur animi temporibus
-                  nesciunt praesentium dolore sed nulla ipsum eveniet corporis
-                  quidem, mollitia itaque minus soluta, voluptates neque
-                  explicabo tempora nisi culpa eius atque dignissimos. Molestias
-                  explicabo corporis voluptatem?
+                  Join us for Hackathon 2K24, where creativity meets technology
+                  in an electrifying showdown of coding prowess. Set for [insert
+                  specific dates], this exhilarating event invites tech
+                  enthusiasts, developers, and innovators from across the globe
+                  to come together and tackle real-world challenges with
+                  cutting-edge solutions. Over the span of 48 hours,
+                  participants will dive into a collaborative frenzy, coding
+                  their way through problems and competing for prizes,
+                  recognition, and the opportunity to turn their visions into
+                  reality.
                 </p>
               </div>
 
@@ -122,17 +126,19 @@ const EventComponent = () => {
                 <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                   <a href="#">
                     <h3 className="font-bold uppercase text-gray-900">
-                      Finding the right guitar for your style - 5 tips
+                      TechCon 2K24
                     </h3>
                   </a>
 
                   <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Recusandae dolores, possimus pariatur animi temporibus
-                    nesciunt praesentium dolore sed nulla ipsum eveniet corporis
-                    quidem, mollitia itaque minus soluta, voluptates neque
-                    explicabo tempora nisi culpa eius atque dignissimos.
-                    Molestias explicabo corporis voluptatem?
+                    Step into the future at TechCon 2024, the premier event for
+                    tech enthusiasts, industry leaders, and innovators.
+                    Scheduled for [insert dates], this event is a melting pot of
+                    ideas and a showcase of groundbreaking technologies that are
+                    shaping our world. From interactive workshops and expert-led
+                    panels to live demonstrations of the latest advancements,
+                    TechCon 2024 offers a unique platform to explore emerging
+                    trends and technologies across diverse sectors.
                   </p>
                 </div>
 

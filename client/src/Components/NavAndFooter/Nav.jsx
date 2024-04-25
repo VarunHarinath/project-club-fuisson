@@ -99,7 +99,7 @@ const Nav = () => {
 
                   <li className="group">
                     <Link
-                      to="/d"
+                      to="/clubs"
                       className="flex items-center gap-2 text-white transition duration-500 ease-in-out hover:bg-blue-700 px-4 py-2 rounded-full"
                     >
                       <svg
@@ -249,7 +249,7 @@ const Nav = () => {
                       </li>
                       <li>
                         <Link
-                          to="/asdf"
+                          to="/clubs"
                           onClick={toggleDropdown}
                           className="flex items-center justify-start w-full rounded-full bg-transparent py-2 text-center text-white transition duration-300 ease-in-out hover:bg-blue-700"
                         >

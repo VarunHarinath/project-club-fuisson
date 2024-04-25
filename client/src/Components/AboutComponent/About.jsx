@@ -18,8 +18,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Fast Refresh",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: " Community Building",
+    desc: "Clubs bring people together around a common interest or purpose, fostering a sense of community and belonging. Members can share their passions and interests in a supportive environment, which helps build social connections and friendships.",
   },
   {
     icon: (
@@ -38,8 +38,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Analytics",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: "Skill Development",
+    desc: "Leadership Skills , Organizational Skills, Communication Skills",
   },
   {
     icon: (
@@ -58,8 +58,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Datacenter security",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: "Networking Opportunities",
+    desc: "Clubs often serve as excellent platforms for networking. Members meet new people, which can lead to professional opportunities, collaborations, and mentorships. Networking within a club can be particularly beneficial for career-oriented clubs or those linked to specific professions.",
   },
   {
     icon: (
@@ -78,8 +78,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Build on your terms",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: "Educational Opportunities",
+    desc: "Many clubs are educational, focusing on topics like technology, literature, science, or languages. These clubs provide a learning environment outside the formal education system where members can learn at their own pace and according to their interests.",
   },
   {
     icon: (
@@ -98,8 +98,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Safe to use",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: "Cultural Exchange",
+    desc: "Cultural or international clubs offer the chance for cultural exchange and understanding. They allow members from different backgrounds to share their cultures, which promotes diversity and inclusion.",
   },
   {
     icon: (
@@ -118,8 +118,8 @@ const features = [
         />
       </svg>
     ),
-    title: "Flexible",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec congue, nisl eget molestie varius, enim ex faucibus purus.",
+    title: "Personal Growth",
+    desc: "Participating in a club can significantly contribute to personal development. It offers a safe space to explore new ideas, challenge oneself, and gain confidence in public speaking and presenting one’s ideas.",
   },
 ];
 const About = () => {
@@ -135,9 +135,17 @@ const About = () => {
                 Udbava
               </h3>
               <p className="text-gray-300 leading-relaxed mt-3">
-                Nam erat risus, sodales sit amet lobortis ut, finibus eget
-                metus. Cras aliquam ante ut tortor posuere feugiat. Duis sodales
-                nisi id porta lacinia.
+                The CSE Club is your central hub for all things computer science
+                at Malla Reddy University! Explore a diverse range of clubs
+                catering to all skill levels, from beginners to coding wizards.
+                Find your perfect club, connect with like-minded peers, and
+                collaborate on projects that push the boundaries of technology.
+                Showcase your talent at hackathons, stay informed about club
+                events, and share your projects to get valuable feedback. Learn
+                from industry experts through workshops and talks, and
+                contribute to a vibrant and innovative community. It's more than
+                a directory - it's your launchpad to a world of tech exploration
+                and collaboration!
               </p>
             </div>
             {/* end of heading and para */}
@@ -150,7 +158,7 @@ const About = () => {
             <div className="max-w-screen-xl mx-auto px-4 text-center text-gray-600 md:px-8">
               <div className="max-w-2xl mx-auto">
                 <h3 className="text-white text-3xl font-semibold sm:text-4xl">
-                  The fastest way to launch a product
+                  Why Udhbhava ?
                 </h3>
                 <p className="mt-3 text-gray-300">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -274,13 +282,13 @@ const About = () => {
               <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
                   <h2 class="text-3xl font-bold text-white sm:text-4xl">
-                    Lorem ipsum dolor sit amet consectetur
+                    Beyond Boundaries: Expanding Horizons Through Active
+                    Participation
                   </h2>
 
                   <p class="mt-4 text-gray-500 sm:text-xl">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Ratione dolores laborum labore provident impedit esse
-                    recusandae facere libero harum sequi.
+                    Celebrating Diversity and Innovation in Our Thriving Club
+                    Ecosystem
                   </p>
                 </div>
 

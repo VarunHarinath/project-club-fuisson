@@ -15,18 +15,21 @@ const PageContentTwo = () => {
             </div>
 
             <div className="lg:py-24">
-              <h2 className="text-3xl font-bold sm:text-4xl">
-                Grow your audience
-              </h2>
+              <h2 className="text-3xl font-bold sm:text-4xl">CSE CLUBS</h2>
 
               <p className="mt-4 text-gray-600">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut
-                qui hic atque tenetur quis eius quos ea neque sunt, accusantium
-                soluta minus veniam tempora deserunt? Molestiae eius quidem quam
-                repellat. Lorem ipsum dolor, sit amet consectetur adipisicing
-                elit. Aut qui hic atque tenetur quis eius quos ea neque sunt,
-                accusantium soluta minus veniam tempora deserunt? Molestiae eius
-                quidem quam repellat.
+                Calling all tech wizards and aspiring innovators! Are you
+                fascinated by the ever-evolving world of computer science? Do
+                you dream of crafting groundbreaking software or diving into the
+                intricacies of artificial intelligence? The CSE Club is your
+                launchpad into a dynamic community at MallaReddy University.
+                Here, you'll discover a multitude of clubs tailored to every
+                tech enthusiast, from seasoned programmers wielding their coding
+                expertise to curious beginners eager to take their first steps.
+                Whether you crave in-depth workshops to hone your skills,
+                workshops led by industry leaders to gain invaluable insights,
+                or collaborative project opportunities to put your knowledge
+                into action, the CSE Club has it all.
               </p>
             </div>
           </div>
