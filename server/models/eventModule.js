@@ -17,6 +17,10 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  status: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const EventModel = mongoose.model("Event", EventSchema);

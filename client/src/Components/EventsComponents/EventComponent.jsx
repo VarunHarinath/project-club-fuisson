@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const EventComponent = () => {
+  const [eventData, setEventData] = useState([]);
+
+  useEffect(() => {
+    const fetchEventApi = async () => {
+      try {
+        const response = await axios.get(
+          "https://project-club-fuisson.onrender.com/events"
+        );
+        setEventData(response.data);
+        console.log(eventData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchEventApi();
+  }, []);
+
   return (
     <>
       <div className="m-5 cursor-default">

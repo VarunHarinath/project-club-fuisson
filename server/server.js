@@ -1,10 +1,16 @@
+// Dependenceis
 import express from "express";
+import cors from "cors";
+// file imports
 import connectToMongoDB from "./db/Connectdb.js";
 import EventRoute from "./routes/EventRoute.js";
-
+// instance creation
 const app = express();
+// Middlewares
 app.use(express.json());
+app.use(cors());
 
+// database connection
 connectToMongoDB();
 
 app.get("/", (req, res) => {
