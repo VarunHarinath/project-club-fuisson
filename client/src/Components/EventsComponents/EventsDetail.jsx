@@ -30,7 +30,11 @@ const EventsDetail = () => {
       fetchEventApi();
     }
   }, [fetchData, eventId]);
-
+  const formatDate = (dateString) => {
+    const options = { month: "short", day: "numeric", year: "numeric" };
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", options);
+  };
   return (
     <>
       {/* loading */}
@@ -92,16 +96,22 @@ const EventsDetail = () => {
 
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                   <dt class="font-medium text-gray-900">Event Venue</dt>
-                  <dd class="text-gray-700 sm:col-span-2"></dd>
+                  <dd class="text-gray-700 sm:col-span-2">
+                    {eventDataById && eventDataById.eventVenue}
+                  </dd>
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                   <dt class="font-medium text-gray-900">Hosted By</dt>
-                  <dd class="text-gray-700 sm:col-span-2"></dd>
+                  <dd class="text-gray-700 sm:col-span-2">
+                    {eventDataById && eventDataById.hostedBy}
+                  </dd>
                 </div>
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4 text-red-600">
                   <dt class="font-medium ">Last Date To Apply</dt>
-                  <dd class=" sm:col-span-2"></dd>
+                  <dd class=" sm:col-span-2">
+                    {eventDataById && formatDate(eventDataById.lastDate)}
+                  </dd>
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">

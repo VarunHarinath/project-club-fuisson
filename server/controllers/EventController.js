@@ -24,12 +24,25 @@ const eventFindById = async (req, res) => {
 // Create a new event
 const eventPost = async (req, res) => {
   try {
-    const { eventName, eventDescription, eventDate, eventYear } = req.body;
+    const {
+      eventName,
+      eventDescription,
+      eventDate,
+      eventYear,
+      eventVenue,
+      hostedBy,
+      lastDate,
+      status,
+    } = req.body;
     const response = await EventModel.create({
       eventName,
       eventDescription,
       eventDate,
       eventYear,
+      eventVenue,
+      hostedBy,
+      lastDate,
+      status,
     });
     res.json({ message: true });
   } catch (error) {
