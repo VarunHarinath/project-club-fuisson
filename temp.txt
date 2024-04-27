@@ -1,0 +1,4 @@
+events - title
+-Date - Event Venue - Hosted By - Last Date - Description
+
+attendee - Name - dept - roll No. - Phone Number - Event Name - Order Id - Quantity

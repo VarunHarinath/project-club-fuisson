@@ -1,5 +1,6 @@
 import EventModel from "../models/eventModule.js";
 
+// Find all events
 const eventFind = async (req, res) => {
   try {
     const response = await EventModel.find({});
@@ -9,6 +10,7 @@ const eventFind = async (req, res) => {
   }
 };
 
+// Find event by ID
 const eventFindById = async (req, res) => {
   const id = req.params.id;
   try {
@@ -19,6 +21,7 @@ const eventFindById = async (req, res) => {
   }
 };
 
+// Create a new event
 const eventPost = async (req, res) => {
   try {
     const { eventName, eventDescription, eventDate, eventYear } = req.body;
@@ -33,4 +36,5 @@ const eventPost = async (req, res) => {
     res.json(error);
   }
 };
+
 export { eventFind, eventPost, eventFindById };

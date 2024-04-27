@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const EventComponent = () => {
   const [eventData, setEventData] = useState([]);
+  const [fetchData, setFetchData] = useState(true);
 
   useEffect(() => {
     const fetchEventApi = async () => {
-      try {
-        const response = await axios.get(
-          "https://project-club-fuisson.onrender.com/events"
-        );
-        setEventData(response.data);
-        console.log(eventData);
-      } catch (error) {
-        console.log(error);
+      if (fetchData && eventData.length === 0) {
+        try {
+          const response = await axios.get(
+            "https://project-club-fuisson.onrender.com/events"
+          );
+          console.log(response.data);
+          setEventData(response.data);
+          setFetchData(false);
+        } catch (error) {
+          console.error("Error fetching events:", error);
+          setFetchData(false);
+        }
       }
     };
 
-    fetchEventApi();
-  }, []);
+    if (fetchData) {
+      fetchEventApi();
+    }
+  }, [fetchData]);
 
   return (
     <>
@@ -43,62 +51,107 @@ const EventComponent = () => {
             <p className="whitespace-nowrap text-base">Upcoming Events</p>
           </span>
         </div>
-        <div className="m-5">
-          <article className="flex bg-white transition hover:shadow-2xl">
-            <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-              <time
-                datetime="2022-10-10"
-                className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
-              >
-                <span>2022</span>
-                <span className="w-px flex-1 bg-gray-900/10"></span>
-                <span>Oct 10</span>
-              </time>
-            </div>
-
-            <div className="hidden sm:block sm:basis-56">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                className="aspect-square h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="flex flex-1 flex-col justify-between">
-              <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                <a href="#">
-                  <h3 className="font-bold uppercase text-gray-900">
-                    Hacathon 2k24
-                  </h3>
-                </a>
-
-                <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                  Join us for Hackathon 2K24, where creativity meets technology
-                  in an electrifying showdown of coding prowess. Set for [insert
-                  specific dates], this exhilarating event invites tech
-                  enthusiasts, developers, and innovators from across the globe
-                  to come together and tackle real-world challenges with
-                  cutting-edge solutions. Over the span of 48 hours,
-                  participants will dive into a collaborative frenzy, coding
-                  their way through problems and competing for prizes,
-                  recognition, and the opportunity to turn their visions into
-                  reality.
-                </p>
+        {/* Loading Component */}
+        {fetchData && (
+          <div
+            role="status"
+            className="w-full m-5 p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
+          >
+            <div className="flex items-center justify-between">
+              <div>Loading may takeupto 50 seconds...</div>
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
               </div>
-
-              <div className="sm:flex sm:items-end sm:justify-end">
-                <a
-                  href="#"
-                  className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
-                >
-                  Book the event
-                </a>
-              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
             </div>
-          </article>
-        </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <span className="sr-only">Loading...</span>
+          </div>
+        )}
+        {/* end of loading compoenet */}
+        {/* Dynamic data  */}
+        {eventData.map((event) => {
+          if (event.status) {
+            return (
+              <>
+                <div className="m-5">
+                  <article className="flex bg-white transition hover:shadow-2xl">
+                    <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+                      <time
+                        datetime="2022-10-10"
+                        className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
+                      >
+                        <span>{event.eventYear}</span>
+                        <span className="w-px flex-1 bg-gray-900/10"></span>
+                        <span> {event.eventDate} </span>
+                      </time>
+                    </div>
 
-        {/* complemeted events */}
+                    <div className="hidden sm:block sm:basis-56">
+                      <img
+                        alt=""
+                        src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                        className="aspect-square h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="flex flex-1 flex-col justify-between">
+                      <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+                        <Link to={`/events/${event._id}`}>
+                          <h3 className="font-bold uppercase text-gray-900">
+                            {event.eventName}
+                          </h3>
+                        </Link>
+
+                        <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                          {event.eventDescription}
+                        </p>
+                      </div>
+
+                      <div className="sm:flex sm:items-end sm:justify-end">
+                        <Link
+                          to={`/events/${event._id}`}
+                          className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+                        >
+                          Book the event
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </>
+            );
+          }
+        })}
+        {/* end of dynamic data */}
         <div className="text-center mt-14">
           <span class="inline-flex items-center justify-center rounded-full bg-amber-100 px-2.5 py-0.5 text-amber-700">
             <svg
@@ -119,60 +172,107 @@ const EventComponent = () => {
             <p class="whitespace-nowrap text-base">Past Events</p>
           </span>
         </div>
-        <div>
-          <div className="m-5">
-            <article className="flex bg-white transition hover:shadow-2xl ">
-              <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
-                <time
-                  datetime="2022-10-10"
-                  className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
-                >
-                  <span>2022</span>
-                  <span className="w-px flex-1 bg-gray-900/10"></span>
-                  <span>Oct 10</span>
-                </time>
+        {/* past elemets */}
+        {/* Loading Component */}
+        {fetchData && (
+          <div
+            role="status"
+            className="w-full m-5 p-4 space-y-4 border border-gray-200 divide-y divide-gray-200 rounded shadow animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700"
+          >
+            <div className="flex items-center justify-between">
+              <div>Loading may takeupto 50 seconds...</div>
+
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
               </div>
-
-              <div className="hidden sm:block sm:basis-56">
-                <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                  className="aspect-square h-full w-full object-cover"
-                />
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
               </div>
-
-              <div className="flex flex-1 flex-col justify-between">
-                <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-                  <a href="#">
-                    <h3 className="font-bold uppercase text-gray-900">
-                      TechCon 2K24
-                    </h3>
-                  </a>
-
-                  <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                    Step into the future at TechCon 2024, the premier event for
-                    tech enthusiasts, industry leaders, and innovators.
-                    Scheduled for [insert dates], this event is a melting pot of
-                    ideas and a showcase of groundbreaking technologies that are
-                    shaping our world. From interactive workshops and expert-led
-                    panels to live demonstrations of the latest advancements,
-                    TechCon 2024 offers a unique platform to explore emerging
-                    trends and technologies across diverse sectors.
-                  </p>
-                </div>
-
-                <div className="sm:flex sm:items-end sm:justify-end">
-                  <p
-                    href="#"
-                    className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400 hover:blur-sm hover: cursor-not-allowed"
-                  >
-                    Book the event
-                  </p>
-                </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
               </div>
-            </article>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <div className="flex items-center justify-between pt-4">
+              <div>
+                <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>
+                <div className="w-32 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+              </div>
+              <div className="h-2.5 bg-gray-300 rounded-full dark:bg-gray-700 w-12"></div>
+            </div>
+            <span className="sr-only">Loading...</span>
           </div>
-        </div>
+        )}
+        {/* end of loading compoenet */}
+        {/* Dynamic data  */}
+        {eventData.map((event) => {
+          if (event.status) {
+            return (
+              <>
+                <div className="m-5 ">
+                  <article className="flex bg-white transition hover:shadow-2xl">
+                    <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
+                      <time
+                        datetime="2022-10-10"
+                        className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
+                      >
+                        <span>{event.eventYear}</span>
+                        <span className="w-px flex-1 bg-gray-900/10"></span>
+                        <span> {event.eventDate} </span>
+                      </time>
+                    </div>
+
+                    <div className="hidden sm:block sm:basis-56">
+                      <img
+                        alt=""
+                        src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+                        className="aspect-square h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <div className="flex flex-1 flex-col justify-between">
+                      <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+                        <p href="#">
+                          <h3 className="font-bold uppercase text-gray-900">
+                            {event.eventName}
+                          </h3>
+                        </p>
+
+                        <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                          {event.eventDescription}
+                        </p>
+                      </div>
+
+                      <div className="sm:flex sm:items-end sm:justify-end">
+                        <Link className="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400 hover:blur-sm hover: cursor-not-allowed">
+                          Book the event
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </>
+            );
+          }
+        })}
+        {/* end of dynamic data */}
+        {/* end of past elements */}
       </div>
     </>
   );

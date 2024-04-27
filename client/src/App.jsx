@@ -6,6 +6,7 @@ import EventComponent from "./Components/EventsComponents/EventComponent";
 import About from "./Components/AboutComponent/About";
 import Contact from "./Components/ContactComponet/Contact";
 import Club from "./Components/ClubComponent/Club";
+import EventsDetail from "./Components/EventsComponents/EventsDetail";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<EventComponent />} />
+            <Route path="/events/:eventId" element={<EventsDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clubs" element={<Club />} />
             <Route path="*" element={<ErrorPage />} />
