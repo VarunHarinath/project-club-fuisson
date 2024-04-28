@@ -7,6 +7,7 @@ import About from "./Components/AboutComponent/About";
 import Contact from "./Components/ContactComponet/Contact";
 import Club from "./Components/ClubComponent/Club";
 import EventsDetail from "./Components/EventsComponents/EventsDetail";
+import ClubDetail from "./Components/ClubComponent/ClubDetail";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/events/:eventId" element={<EventsDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clubs" element={<Club />} />
+            <Route path="/clubs/:id" element={<ClubDetail />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>

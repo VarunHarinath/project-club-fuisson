@@ -8,7 +8,7 @@ const EventComponent = () => {
 
   useEffect(() => {
     const fetchEventApi = async () => {
-      if (fetchData && eventData.length === 0) {
+      if (fetchData) {
         try {
           const response = await axios.get(
             "https://project-club-fuisson.onrender.com/events"
@@ -23,9 +23,7 @@ const EventComponent = () => {
       }
     };
 
-    if (fetchData) {
-      fetchEventApi();
-    }
+    fetchEventApi();
   }, [fetchData]);
 
   return (
@@ -222,7 +220,7 @@ const EventComponent = () => {
         {/* end of loading compoenet */}
         {/* Dynamic data  */}
         {eventData.map((event) => {
-          if (event.status) {
+          if (!event.status) {
             return (
               <>
                 <div className="m-5 ">

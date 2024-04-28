@@ -11,7 +11,7 @@ const clubFind = async (req, res) => {
 
 const clubFindById = async (req, res) => {
   try {
-    const clubId = req.params.cludId;
+    const { clubId } = req.params;
     const response = await clubModel.findById({ _id: clubId });
     res.status(200).json(response);
   } catch (error) {

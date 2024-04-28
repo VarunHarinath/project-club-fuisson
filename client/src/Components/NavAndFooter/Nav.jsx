@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
@@ -11,6 +12,15 @@ const Nav = () => {
   const closeDropdown = () => {
     setIsDropdownOpen(false);
   };
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      const response = await axios.get(
+        "https://project-club-fuisson.onrender.com/"
+      );
+    };
+    fetchApi();
+  });
 
   return (
     <>

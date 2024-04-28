@@ -6,8 +6,8 @@ const EventsDetail = () => {
   const { eventId } = useParams();
   const [eventDataById, setEventDataById] = useState(null);
   const [fetchData, setFetchData] = useState(true);
-  const numberOfRows = 5; // Example number of rows
-  const numberOfColumns = 3; // Example number of columns
+  const numberOfRows = 5;
+  const numberOfColumns = 3;
 
   useEffect(() => {
     const fetchEventApi = async () => {
