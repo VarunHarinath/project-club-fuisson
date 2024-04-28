@@ -23,7 +23,7 @@ function App() {
             <Route path="/events/:eventId" element={<EventsDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clubs" element={<Club />} />
-            <Route path="/clubs/:id" element={<ClubDetail />} />
+            <Route path="/clubs/:clubId" element={<ClubDetail />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
