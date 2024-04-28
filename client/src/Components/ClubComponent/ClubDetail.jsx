@@ -94,7 +94,7 @@ const ClubDetail = () => {
 
         {/* Image */}
         {clubDataById && (
-          <div className="mx-7">
+          <div className=" mx-16">
             <p href="#" className="block">
               <img
                 alt=""
@@ -120,7 +120,7 @@ const ClubDetail = () => {
       </div>
       {/* Table of contents */}
       {clubDataById && (
-        <div className="m-10">
+        <div className="m-10 mx-16">
           <div className="flow-root rounded-lg border border-gray-100 py-3 shadow-sm">
             <dl className="-my-3 divide-y divide-gray-100 text-sm">
               <div className="grid grid-cols-1 gap-1 p-3 sm:grid-cols-3 sm:gap-4">
