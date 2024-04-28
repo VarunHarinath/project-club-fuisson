@@ -2,3 +2,8 @@ events - title
 -Date - Event Venue - Hosted By - Last Date - Description
 
 attendee - Name - dept - roll No. - Phone Number - Event Name - Order Id - Quantity
+
+
+API design
+-- or fetching we get the data as 201 and if there is any error we get 500
+-- While post method, if it is successfull message:true or status code 500

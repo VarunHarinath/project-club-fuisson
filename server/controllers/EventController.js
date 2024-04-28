@@ -4,9 +4,9 @@ import EventModel from "../models/eventModule.js";
 const eventFind = async (req, res) => {
   try {
     const response = await EventModel.find({});
-    res.json(response);
+    res.status(200).json(response);
   } catch (error) {
-    console.log(error);
+    res.status(500).json(error);
   }
 };
 
@@ -17,7 +17,7 @@ const eventFindById = async (req, res) => {
     const response = await EventModel.findById({ _id: id });
     res.json(response);
   } catch (error) {
-    console.log(error);
+    res.status(500).json(error);
   }
 };
 
@@ -46,7 +46,7 @@ const eventPost = async (req, res) => {
     });
     res.json({ message: true });
   } catch (error) {
-    res.json(error);
+    res.status(500).json(error);
   }
 };
 
