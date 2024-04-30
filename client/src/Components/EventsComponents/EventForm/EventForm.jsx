@@ -48,10 +48,10 @@ const EventForm = () => {
           <div className="text-center">
             <img src="" width={150} className="mx-auto" />
             <div className="mt-5 space-y-2">
-              <h3 className="text-gray-800 text-2xl font-bold sm:text-3xl">
-                Fill the Form
+              <h3 className=" text-sky-600 text-2xl font-bold sm:text-3xl">
+                Participant registration Form
               </h3>
-              <p className="">to continue with the payment </p>
+              <p className=" text-gray-600">to continue with the payment </p>
             </div>
           </div>
           <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
