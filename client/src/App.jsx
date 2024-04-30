@@ -8,6 +8,7 @@ import Contact from "./Components/ContactComponet/Contact";
 import Club from "./Components/ClubComponent/Club";
 import EventsDetail from "./Components/EventsComponents/EventsDetail";
 import ClubDetail from "./Components/ClubComponent/ClubDetail";
+import EventForm from "./Components/EventsComponents/EventForm/EventForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<EventComponent />} />
             <Route path="/events/:eventId" element={<EventsDetail />} />
+            <Route path="/eventForm/:eventId" element={<EventForm />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clubs" element={<Club />} />
             <Route path="/clubs/:clubId" element={<ClubDetail />} />

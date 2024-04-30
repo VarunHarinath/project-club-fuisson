@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const EventsDetail = () => {
@@ -102,6 +102,13 @@ const EventsDetail = () => {
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
+                  <dt class="font-medium text-gray-900">Price</dt>
+                  <dd class="text-gray-700 sm:col-span-2">
+                    ₹{eventDataById && eventDataById.price} /-
+                  </dd>
+                </div>
+
+                <div class="grid grid-cols-1 gap-1 py-3 sm:grid-cols-3 sm:gap-4">
                   <dt class="font-medium text-gray-900">Hosted By</dt>
                   <dd class="text-gray-700 sm:col-span-2">
                     {eventDataById && eventDataById.hostedBy}
@@ -126,16 +133,16 @@ const EventsDetail = () => {
           {/* end of dynamic table */}
           {/* button */}
           <div className="flex justify-center mt-28">
-            <a
+            <Link
               className="group relative inline-block focus:outline-none focus:ring"
-              href="#"
+              to={`/eventForm/${eventDataById._id}`}
             >
               <span className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-yellow-300 transition-transform group-hover:translate-x-0 group-hover:translate-y-0"></span>
 
               <span className="relative inline-block border-2 border-current px-8 py-3 text-sm font-bold uppercase tracking-widest text-black group-active:text-opacity-75">
                 Book the event !
               </span>
-            </a>
+            </Link>
           </div>
         </>
       )}

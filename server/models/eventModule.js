@@ -34,6 +34,10 @@ const EventSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  price: {
+    type: Number,
+    required: true,
+  },
 });
 
 // Create the model using the schema

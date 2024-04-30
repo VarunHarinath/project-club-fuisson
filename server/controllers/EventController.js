@@ -33,6 +33,7 @@ const eventPost = async (req, res) => {
       hostedBy,
       lastDate,
       status,
+      price,
     } = req.body;
     const response = await EventModel.create({
       eventName,
@@ -43,6 +44,7 @@ const eventPost = async (req, res) => {
       hostedBy,
       lastDate,
       status,
+      price,
     });
     res.json({ message: true });
   } catch (error) {
