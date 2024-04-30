@@ -30,7 +30,7 @@ const EventForm = () => {
   }, [fetchData, eventId]);
   return (
     <>
-      <main className="w-full h-screen flex flex-col items-center justify-center bg-gray-50 sm:px-4 shadow-xl">
+      <main className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 sm:px-4 shadow-xl py-16 sm:pt-20">
         <div className="w-full space-y-6 text-gray-600 sm:max-w-md">
           <div className="text-center">
             <img src="" width={150} className="mx-auto" />
