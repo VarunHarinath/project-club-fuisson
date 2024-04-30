@@ -5,6 +5,7 @@ import cors from "cors";
 import connectToMongoDB from "./db/Connectdb.js";
 import EventRoute from "./routes/EventRoute.js";
 import clubRoute from "./routes/ClubRoute.js";
+import participantRoute from "./routes/ParticipantRoute.js";
 // instance creation
 const app = express();
 // Middlewares
@@ -22,6 +23,9 @@ app.use("/events", EventRoute);
 
 // Club Router
 app.use("/clubs", clubRoute);
+
+// Participant Route
+app.use("/participants", participantRoute);
 const PORT = process.env.PORT || 5000;
 
 app.listen(process.env.PORT, (req, res) =>

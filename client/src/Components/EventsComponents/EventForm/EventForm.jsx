@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import axios from "axios";
+import ConfirmDetails from "../Payment/ConfirmDetails";
 
 const EventForm = () => {
   const { eventId } = useParams();
@@ -11,6 +13,7 @@ const EventForm = () => {
   const [number, setNumber] = useState("");
   const [rollNumber, setRollNumber] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isModalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchEventApi = async () => {
@@ -33,6 +36,11 @@ const EventForm = () => {
       fetchEventApi();
     }
   }, [fetchData, eventId]);
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    setModalOpen(true);
+  };
   return (
     <>
       <main className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-50 sm:px-4 shadow-xl py-16 sm:pt-20">
@@ -47,7 +55,7 @@ const EventForm = () => {
             </div>
           </div>
           <div className="bg-white shadow p-4 py-6 sm:p-6 sm:rounded-lg">
-            <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
+            <form onSubmit={onSubmitHandler} className="space-y-5">
               <div className="relative w-full">
                 <svg
                   className="w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto"
@@ -215,10 +223,23 @@ const EventForm = () => {
                 />
               </div>
 
-              <button className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
+              <button
+                type="submit"
+                className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+              >
                 Continue With Payment
               </button>
             </form>
+            <ConfirmDetails
+              isOpen={isModalOpen}
+              onOpenChange={setModalOpen}
+              name={name}
+              email={email}
+              rollNumber={rollNumber}
+              phoneNumber={number}
+              price={eventDataById ? eventDataById.eventVenue : null}
+              event={eventDataById ? eventDataById.eventName : null}
+            />
           </div>
         </div>
       </main>
