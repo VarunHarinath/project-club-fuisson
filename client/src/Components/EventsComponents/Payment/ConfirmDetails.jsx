@@ -54,9 +54,9 @@ const ConfirmDetails = ({
               </Dialog.Title>
               <Dialog.Description className="mt-1 text-base leading-relaxed text-center text-gray-500 py-4">
                 <span className="font-semibold">Name: </span>{" "}
-                <span className=" font-bold">{name}</span> <br />
+                <span className=" font-bold text-sky-500">{name}</span> <br />
                 <span className="font-semibold">Email: </span>{" "}
-                <span className=" font-bold">{email}</span> <br />
+                <span className=" font-bold text-sky-500">{email}</span> <br />
               </Dialog.Description>
               <div className="items-center gap-2 mt-3 text-sm sm:flex">
                 <Dialog.Close asChild>
