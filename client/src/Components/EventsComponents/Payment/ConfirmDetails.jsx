@@ -1,5 +1,6 @@
 import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
+import axios from "axios";
 
 const ConfirmDetails = ({
   isOpen,
@@ -11,6 +12,20 @@ const ConfirmDetails = ({
   price,
   event,
 }) => {
+  const onClickHandler = async (e) => {
+    e.stopPropagation();
+    try {
+      const data = { name, email, rollNumber, phoneNumber, price, event };
+      const response = await axios.post(
+        "https://project-club-fuisson.onrender.com/participants",
+        data
+      );
+      const id = response.data.id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
@@ -44,7 +59,10 @@ const ConfirmDetails = ({
               </Dialog.Description>
               <div className="items-center gap-2 mt-3 text-sm sm:flex">
                 <Dialog.Close asChild>
-                  <button className="w-full mt-2 p-2.5 flex-1 text-white bg-indigo-600 rounded-md outline-none ring-offset-2 ring-indigo-600 focus:ring-2">
+                  <button
+                    onClick={onClickHandler}
+                    className="w-full mt-2 p-2.5 flex-1 text-white bg-indigo-600 rounded-md outline-none ring-offset-2 ring-indigo-600 focus:ring-2"
+                  >
                     Pay
                   </button>
                 </Dialog.Close>
