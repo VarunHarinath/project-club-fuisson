@@ -68,9 +68,9 @@ const putParticipantQrCode = async (req, res) => {
       qrCode,
     });
     if (response) {
-      res.status(404).json({ message: true });
-    } else {
       res.status(204).json({ message: true });
+    } else {
+      res.status(404).json({ message: true });
     }
   } catch (error) {
     console.log(error);
