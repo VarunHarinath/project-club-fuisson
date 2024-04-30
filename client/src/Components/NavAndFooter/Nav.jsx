@@ -228,7 +228,7 @@ const Nav = () => {
                       </li>
                       <li>
                         <Link
-                          to="/asdf"
+                          to="/events"
                           onClick={toggleDropdown}
                           className="flex items-center justify-start w-full rounded-full bg-transparent py-2 text-center text-white transition duration-300 ease-in-out hover:bg-blue-700"
                         >
