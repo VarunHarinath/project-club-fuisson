@@ -237,7 +237,7 @@ const EventForm = () => {
               email={email}
               rollNumber={rollNumber}
               phoneNumber={number}
-              price={eventDataById ? eventDataById.eventVenue : null}
+              price={eventDataById ? eventDataById.price : null}
               event={eventDataById ? eventDataById.eventName : null}
             />
           </div>
