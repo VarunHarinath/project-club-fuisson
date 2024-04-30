@@ -6,6 +6,11 @@ const EventForm = () => {
   const { eventId } = useParams();
   const [eventDataById, setEventDataById] = useState(null);
   const [fetchData, setFetchData] = useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [rollNumber, setRollNumber] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const fetchEventApi = async () => {
@@ -61,6 +66,9 @@ const EventForm = () => {
                   type="text"
                   placeholder="Your Name"
                   className="w-full pl-12 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
               <div className="relative w-full">
@@ -79,9 +87,12 @@ const EventForm = () => {
                   />
                 </svg>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="Enter your email ( College Email Id )"
                   className="w-full pl-12 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </div>
               <div className="relative w-full">
@@ -89,6 +100,9 @@ const EventForm = () => {
                   type="text"
                   placeholder="Roll Number"
                   className="w-full pl-12 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  value={rollNumber}
+                  onChange={(e) => setRollNumber(e.target.value)}
+                  required
                 />
               </div>
               <div className="relative w-full">
@@ -116,7 +130,24 @@ const EventForm = () => {
                       type="number"
                       placeholder="+1 (555) 000-000"
                       className="w-full pl-[4.5rem] pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                      value={number}
+                      onChange={(e) => {
+                        const trimmedValue = e.target.value.trim();
+                        setNumber(trimmedValue);
+
+                        if (trimmedValue.length === 10) {
+                          setErrorMessage("");
+                        } else {
+                          setErrorMessage("Please enter exactly 10 digits.");
+                        }
+                      }}
+                      required
                     />
+                    {errorMessage && (
+                      <div className="text-red-500 text-xs mt-1">
+                        {errorMessage}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
