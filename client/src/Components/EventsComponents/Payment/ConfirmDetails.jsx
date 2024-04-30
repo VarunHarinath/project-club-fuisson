@@ -21,6 +21,7 @@ const ConfirmDetails = ({
         data
       );
       const id = response.data.id;
+      console.log(id);
     } catch (error) {
       console.log(error);
     }
