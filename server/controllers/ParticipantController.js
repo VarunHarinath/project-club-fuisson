@@ -10,6 +10,16 @@ const getParticipants = async (req, res) => {
   }
 };
 
+const getParticipantsById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const response = await participantModel.findById({ _id: id });
+    res.status(200).json(response);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 const postParticipant = async (req, res) => {
   try {
     const { name, email, phoneNumber, rollNumber, price, event } = req.body;
@@ -84,4 +94,5 @@ export {
   deleteParticipant,
   putParticipantOrderId,
   putParticipantQrCode,
+  getParticipantsById,
 };
