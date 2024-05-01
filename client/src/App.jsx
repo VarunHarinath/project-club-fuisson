@@ -24,7 +24,11 @@ function App() {
             <Route path="/events" element={<EventComponent />} />
             <Route path="/events/:eventId" element={<EventsDetail />} />
             <Route path="/eventForm/:eventId" element={<EventForm />} />
-            <Route path="/event/successform/:id" element={<SucessPage />} />
+            <Route
+              exact
+              path="/event/successform/:id"
+              element={<SucessPage />}
+            />
             <Route path="/contact" element={<Contact />} />
             <Route path="/clubs" element={<Club />} />
             <Route path="/clubs/:clubId" element={<ClubDetail />} />

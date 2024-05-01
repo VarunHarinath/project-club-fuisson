@@ -55,7 +55,7 @@ const paymentVerification = async (req, res) => {
     } catch (error) {
       res.json(error);
     }
-    res.redirect(`https://mru-clubs.vercel.app/event/successform/${id}`);
+    res.redirect(`/event/successform/${id}`);
   } else {
     res.status(400).json({
       message: false,
