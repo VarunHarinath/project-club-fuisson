@@ -1,4 +1,13 @@
 import instance from "./PaymentInstance.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const getApi = (req, res) => {
+  res.status(200).json({
+    key: process.env.RAZERPAY_API_KEY,
+  });
+};
 
 const checkout = async (req, res) => {
   try {
@@ -15,4 +24,4 @@ const checkout = async (req, res) => {
   }
 };
 
-export { checkout };
+export { checkout, getApi };

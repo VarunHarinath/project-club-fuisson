@@ -22,6 +22,16 @@ const ConfirmDetails = ({
       );
       const id = response.data.id;
       console.log(id);
+      if (id) {
+        try {
+          const dataResponse = await axios.post(
+            `https://project-club-fuisson.onrender.com/payments/checkout/${price}`
+          );
+          console.log(dataResponse.data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
     } catch (error) {
       console.log(error);
     }
