@@ -1,4 +1,6 @@
+import participantModel from "../models/Participant.js";
 import instance from "./PaymentInstance.js";
+import crypto from "crypto";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -24,4 +26,41 @@ const checkout = async (req, res) => {
   }
 };
 
-export { checkout, getApi };
+const paymentVerification = async (req, res) => {
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
+    req.body;
+
+  const body = razorpay_order_id + "|" + razorpay_payment_id;
+
+  const expectedSignature = crypto
+    .createHmac("sha256", process.env.RAZERPAY_SECRET_KEY)
+    .update(body.toString())
+    .digest("hex");
+
+  const isAuthentic = expectedSignature == razorpay_signature;
+
+  if (isAuthentic) {
+    const id = req.params.id;
+    try {
+      const response = await participantModel.findByIdAndUpdate(id, {
+        $set: {
+          orderId: razorpay_order_id,
+          paymentId: razorpay_payment_id,
+        },
+      });
+
+      if (!response) {
+        res.status(404).json({ message: false });
+      }
+    } catch (error) {
+      res.json(error);
+    }
+    res.redirect(`https://mru-clubs.vercel.app//event/successform/${id}`);
+  } else {
+    res.status(400).json({
+      message: false,
+    });
+  }
+};
+
+export { checkout, getApi, paymentVerification };

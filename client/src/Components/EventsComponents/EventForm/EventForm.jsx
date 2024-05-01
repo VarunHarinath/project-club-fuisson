@@ -8,10 +8,10 @@ const EventForm = () => {
   const { eventId } = useParams();
   const [eventDataById, setEventDataById] = useState(null);
   const [fetchData, setFetchData] = useState(true);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [rollNumber, setRollNumber] = useState("");
+  const [name, setName] = useState("v");
+  const [email, setEmail] = useState("v@g.co");
+  const [number, setNumber] = useState("1234567890");
+  const [rollNumber, setRollNumber] = useState("1");
   const [errorMessage, setErrorMessage] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
 

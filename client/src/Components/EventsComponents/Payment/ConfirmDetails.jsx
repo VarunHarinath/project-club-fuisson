@@ -27,11 +27,13 @@ const ConfirmDetails = ({
           const dataResponse = await axios.post(
             `https://project-club-fuisson.onrender.com/payments/checkout/${price}`
           );
+          console.log("dataresponse amount", dataResponse.data.amount);
+          console.log("dataresponse id", dataResponse.data.id);
           const keyResponse = await axios.get(
             "https://project-club-fuisson.onrender.com/payments/getapi"
           );
-          console.log(dataResponse.data);
-          console.log(keyResponse.data);
+          console.log("key response:", keyResponse.data.key);
+
           const options = {
             key: keyResponse.data.key,
             amount: dataResponse.data.amount,
@@ -40,7 +42,7 @@ const ConfirmDetails = ({
             description: "-- Test Transaction -- ",
             image: "",
             order_id: dataResponse.data.id,
-            callback_url: "http://localhost:5000/api/paymentVerification",
+            callback_url: `https://project-club-fuisson.onrender.com/payments/verification/${id}`,
             prefill: {
               name: name,
               email: email,
