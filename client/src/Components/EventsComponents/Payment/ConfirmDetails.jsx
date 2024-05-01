@@ -21,18 +21,16 @@ const ConfirmDetails = ({
         data
       );
       const id = response.data.id;
-      console.log(id);
+
       if (id) {
         try {
           const dataResponse = await axios.post(
             `https://project-club-fuisson.onrender.com/payments/checkout/${price}`
           );
-          console.log("dataresponse amount", dataResponse.data.amount);
-          console.log("dataresponse id", dataResponse.data.id);
+
           const keyResponse = await axios.get(
             "https://project-club-fuisson.onrender.com/payments/getapi"
           );
-          console.log("key response:", keyResponse.data.key);
 
           const options = {
             key: keyResponse.data.key,

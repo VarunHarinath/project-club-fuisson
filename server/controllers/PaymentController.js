@@ -52,10 +52,13 @@ const paymentVerification = async (req, res) => {
       if (!response) {
         res.status(404).json({ message: false });
       }
+      res.json({
+        message: "Success",
+        redirectUrl: `http://localhost:5173/event/successform/${id}}`,
+      });
     } catch (error) {
       res.json(error);
     }
-    res.redirect(`/event/successform/${id}`);
   } else {
     res.status(400).json({
       message: false,

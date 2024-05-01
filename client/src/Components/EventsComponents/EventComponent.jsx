@@ -13,7 +13,7 @@ const EventComponent = () => {
           const response = await axios.get(
             "https://project-club-fuisson.onrender.com/events"
           );
-          console.log(response.data);
+
           setEventData(response.data);
           setFetchData(false);
         } catch (error) {
