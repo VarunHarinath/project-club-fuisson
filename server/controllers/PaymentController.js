@@ -13,7 +13,7 @@ const checkout = async (req, res) => {
   try {
     const amount = req.params.amount;
     const options = {
-      amount: parseInt(amount),
+      amount: parseInt(amount) * 100,
       currency: "INR",
     };
 

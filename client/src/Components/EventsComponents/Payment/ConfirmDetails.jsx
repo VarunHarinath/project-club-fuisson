@@ -27,7 +27,34 @@ const ConfirmDetails = ({
           const dataResponse = await axios.post(
             `https://project-club-fuisson.onrender.com/payments/checkout/${price}`
           );
+          const keyResponse = await axios.get(
+            "https://project-club-fuisson.onrender.com/payments/getapi"
+          );
           console.log(dataResponse.data);
+          console.log(keyResponse.data);
+          const options = {
+            key: keyResponse.data.key,
+            amount: dataResponse.data.amount,
+            currency: "INR",
+            name: "Malla Reddy University CSE",
+            description: "-- Test Transaction -- ",
+            image: "",
+            order_id: dataResponse.data.id,
+            callback_url: "http://localhost:5000/api/paymentVerification",
+            prefill: {
+              name: name,
+              email: email,
+              contact: phoneNumber,
+            },
+            notes: {
+              address: "Razorpay Corporate Office",
+            },
+            theme: {
+              color: "#000000",
+            },
+          };
+          const razor = new window.Razorpay(options);
+          razor.open();
         } catch (error) {
           console.log(error);
         }
