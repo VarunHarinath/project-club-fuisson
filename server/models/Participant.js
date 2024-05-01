@@ -29,6 +29,10 @@ const FormSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
+  paymentId: {
+    type: String,
+    default: null,
+  },
   qrCode: {
     type: String,
     default: null,
