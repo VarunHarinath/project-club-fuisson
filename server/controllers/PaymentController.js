@@ -52,7 +52,7 @@ const paymentVerification = async (req, res) => {
       if (!response) {
         res.status(404).json({ message: false });
       }
-      res.redirect(`http://localhost:5173/event/successform/${id}`);
+      res.redirect(`https://mru-clubs.vercel.app/event/successform/${id}`);
     } catch (error) {
       res.json(error);
     }
