@@ -55,20 +55,34 @@ const paymentVerification = async (req, res) => {
           qrCode: qrCodeUrl,
         },
       });
-      if (!response) {
-        res.status(404).json({ message: false, error: response });
-        return;
-      }
-      res.redirect(`https://mru-clubs.vercel.app/event/successform/${id}`);
-      await PdfMakerAndMail(
-        data._id,
-        data.name,
-        data.email,
-        data.phoneNumber,
-        razorpay_order_id,
-        qrCodeUrl,
-        data.event
-      );
+      setTimeout(async () => {
+        const qrCodeUrl = await QrCode(razorpay_order_id, razorpay_payment_id);
+        const response = await participantModel.findByIdAndUpdate(id, {
+          $set: {
+            orderId: razorpay_order_id,
+            paymentId: razorpay_payment_id,
+            qrCode: qrCodeUrl,
+          },
+        });
+
+        if (!response) {
+          return res
+            .status(404)
+            .json({ message: "Failed to update participant" });
+        }
+
+        await PdfMakerAndMail(
+          data._id,
+          data.name,
+          data.email,
+          data.phoneNumber,
+          razorpay_order_id,
+          qrCodeUrl,
+          data.event
+        );
+
+        res.redirect(`https://mru-clubs.vercel.app/event/successform/${id}`);
+      }, 5000);
     } catch (error) {
       res.json(error);
     }
