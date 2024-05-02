@@ -2,6 +2,9 @@ import participantModel from "../models/Participant.js";
 import instance from "./PaymentInstance.js";
 import crypto from "crypto";
 import dotenv from "dotenv";
+import qrCode from "qrcode";
+import QrCode from "./PaymentComponents/QrCode.js";
+import PdfMakerAndMail from "./PaymentComponents/PdfMaker.js";
 
 dotenv.config();
 
@@ -42,17 +45,30 @@ const paymentVerification = async (req, res) => {
   if (isAuthentic) {
     const id = req.params.id;
     try {
+      const qrCodeUrl = await QrCode(razorpay_order_id, razorpay_payment_id);
+      const data = await participantModel.findById({ _id: id });
+
       const response = await participantModel.findByIdAndUpdate(id, {
         $set: {
           orderId: razorpay_order_id,
           paymentId: razorpay_payment_id,
+          qrCode: qrCodeUrl,
         },
       });
-
       if (!response) {
-        res.status(404).json({ message: false });
+        res.status(404).json({ message: false, error: response });
+        return;
       }
       res.redirect(`https://mru-clubs.vercel.app/event/successform/${id}`);
+      await PdfMakerAndMail(
+        data._id,
+        data.name,
+        data.email,
+        data.phoneNumber,
+        razorpay_order_id,
+        qrCodeUrl,
+        data.event
+      );
     } catch (error) {
       res.json(error);
     }
