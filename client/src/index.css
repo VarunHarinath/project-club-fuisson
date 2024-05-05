@@ -49,3 +49,12 @@
   scrollbar-width: thin; /* "auto" or "thin" makes it slimmer */
   scrollbar-color: #888 #f0f0f0; /* thumb and track color, thumb is the first color */
 }
+
+.tooltip[data-tooltip]:hover:after {
+  @apply bg-black text-white p-2 rounded-lg;
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%; /* Adjust based on your layout */
+  top: 0; /* Adjust based on your layout */
+  white-space: nowrap;
+}
