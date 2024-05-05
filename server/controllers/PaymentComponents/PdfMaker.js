@@ -1,5 +1,5 @@
 import path from "path";
-import puppeteer, { Browser, defaultArgs } from "puppeteer";
+import puppeteer from "puppeteer";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import MailSender from "./MailSender.js";
@@ -86,7 +86,18 @@ const PdfMakerAndMail = async (
         </html>
         `;
   try {
-    const broswer = await puppeteer.launch({ headless: true });
+    const broswer = await puppeteer.launch({
+      headless: true,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+        "--disable-accelerated-2d-canvas",
+        "--no-first-run",
+        "--no-zygote",
+        "--single-process",
+      ],
+    });
     const page = await broswer.newPage();
     await page.setContent(htmlContent);
     const __dirname = path.dirname(fileURLToPath(import.meta.url));
