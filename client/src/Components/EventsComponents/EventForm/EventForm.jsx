@@ -40,6 +40,7 @@ const EventForm = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    setSpinner(true);
     setModalOpen(true);
   };
   return (
