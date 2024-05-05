@@ -33,7 +33,7 @@ const postParticipant = async (req, res) => {
     });
     res.status(201).json({ message: true, id: response._id });
   } catch (error) {
-    res.status(500).json({ message: false });
+    res.status(500).json(error);
   }
 };
 
@@ -42,13 +42,12 @@ const deleteParticipant = async (req, res) => {
     const { id } = req.params;
     const response = await participantModel.findByIdAndDelete(id);
     if (!response) {
-      res.status(404).json({ message: true });
-    } else {
-      res.status(204).json({ message: true });
+      res.status(404).json({ message: false });
     }
+    res.status(204).json({ message: true });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: false });
+    res.status(500).json(error);
   }
 };
 
@@ -62,7 +61,7 @@ const putParticipantOrderId = async (req, res) => {
     if (response) {
       res.status(404).json({ message: true });
     } else {
-      res.status(204).json({ message: true });
+      res.status(204).end();
     }
   } catch (error) {
     console.log(error);
