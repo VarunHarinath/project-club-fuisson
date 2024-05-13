@@ -10,6 +10,7 @@ import EventsDetail from "./Components/EventsComponents/EventsDetail";
 import ClubDetail from "./Components/ClubComponent/ClubDetail";
 import EventForm from "./Components/EventsComponents/EventForm/EventForm";
 import SucessPage from "./Components/EventsComponents/Payment/SucessPage";
+import TermsAndConditions from "./Components/EULA/TermsAndConditions";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
             <Route path="/clubs" element={<Club />} />
             <Route path="/clubs/:clubId" element={<ClubDetail />} />
             <Route path="*" element={<ErrorPage />} />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditions />}
+            />
           </Routes>
         </div>
       </BrowserRouter>

@@ -15,6 +15,11 @@ const EventForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isModalOpen, setModalOpen] = useState(false);
   const [spinner, setSpinner] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setAcceptedTerms(event.target.checked);
+  };
 
   useEffect(() => {
     const fetchEventApi = async () => {
@@ -130,10 +135,33 @@ const EventForm = () => {
             </div>
 
             <div className="relative">
+              <div className="mb-4">
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={acceptedTerms}
+                    onChange={handleCheckboxChange}
+                    className="form-checkbox text-indigo-600"
+                  />
+                  <span className="ml-2">
+                    I accept the{" "}
+                    <a
+                      href="/terms-and-conditions"
+                      className="text-indigo-600 underline"
+                    >
+                      Terms and Conditions
+                    </a>
+                  </span>
+                </label>
+              </div>
               <button
                 type="submit"
-                className="w-full flex justify-center items-center px-4 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-500 focus:outline-none focus:bg-indigo-700 active:bg-indigo-600 duration-300"
-                disabled={spinner}
+                className={`w-full flex justify-center items-center px-4 py-3 text-white font-medium rounded-lg focus:outline-none duration-300 ${
+                  acceptedTerms
+                    ? "bg-indigo-600 hover:bg-indigo-500 focus:bg-indigo-700 active:bg-indigo-600"
+                    : "bg-gray-400 cursor-not-allowed"
+                }`}
+                disabled={!acceptedTerms || spinner}
               >
                 {spinner ? (
                   <div
