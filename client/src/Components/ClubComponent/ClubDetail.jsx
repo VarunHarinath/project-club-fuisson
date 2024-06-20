@@ -15,7 +15,7 @@ const ClubDetail = () => {
         try {
           console.log("fetching...");
           const response = await axios.get(
-            `https://project-club-fuisson.onrender.com/clubs/${clubId}`
+            `https://club-fusion-server.onrender.com/clubs/${clubId}`
           );
           console.log(response.data);
           setClubDataById(response.data);

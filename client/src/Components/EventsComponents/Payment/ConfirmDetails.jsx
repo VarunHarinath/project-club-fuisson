@@ -17,7 +17,7 @@ const ConfirmDetails = ({
     try {
       const data = { name, email, rollNumber, phoneNumber, price, event };
       const response = await axios.post(
-        "https://project-club-fuisson.onrender.com/participants",
+        "https://club-fusion-server.onrender.com/participants",
         data
       );
       const id = response.data.id;
@@ -25,11 +25,11 @@ const ConfirmDetails = ({
       if (id) {
         try {
           const dataResponse = await axios.post(
-            `https://project-club-fuisson.onrender.com/payments/checkout/${price}`
+            `https://club-fusion-server.onrender.com/payments/checkout/${price}`
           );
 
           const keyResponse = await axios.get(
-            "https://project-club-fuisson.onrender.com/payments/getapi"
+            "https://club-fusion-server.onrender.com/payments/getapi"
           );
 
           const options = {
@@ -40,7 +40,7 @@ const ConfirmDetails = ({
             description: "-- Test Transaction -- ",
             image: "",
             order_id: dataResponse.data.id,
-            callback_url: `https://project-club-fuisson.onrender.com/payments/verification/${id}`,
+            callback_url: `https://club-fusion-server.onrender.com/payments/verification/${id}`,
             prefill: {
               name: name,
               email: email,

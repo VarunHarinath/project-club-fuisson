@@ -11,7 +11,7 @@ const EventComponent = () => {
       if (fetchData) {
         try {
           const response = await axios.get(
-            "https://project-club-fuisson.onrender.com/events"
+            "https://club-fusion-server.onrender.com/events"
           );
 
           setEventData(response.data);

@@ -11,7 +11,7 @@ const Club = () => {
       if (fetchData) {
         try {
           const response = await axios.get(
-            "https://project-club-fuisson.onrender.com/clubs"
+            "https://club-fusion-server.onrender.com/clubs"
           );
           console.log(response.data);
           setClubData(response.data);

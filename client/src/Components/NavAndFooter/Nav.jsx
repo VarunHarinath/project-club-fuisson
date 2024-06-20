@@ -16,7 +16,7 @@ const Nav = () => {
   useEffect(() => {
     const fetchApi = async () => {
       const response = await axios.get(
-        "https://project-club-fuisson.onrender.com/"
+        "https://club-fusion-server.onrender.com/"
       );
     };
     fetchApi();

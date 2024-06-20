@@ -13,7 +13,7 @@ const SucessPage = () => {
       if (fetchData && data === null) {
         try {
           const response = await axios.get(
-            `https://project-club-fuisson.onrender.com/participants/${id}`
+            `https://club-fusion-server.onrender.com/participants/${id}`
           );
           console.log(response.data);
           setData(response.data);

@@ -14,7 +14,7 @@ const EventsDetail = () => {
       if (fetchData && eventDataById === null) {
         try {
           const response = await axios.get(
-            `https://project-club-fuisson.onrender.com/events/${eventId}`
+            `https://club-fusion-server.onrender.com/events/${eventId}`
           );
 
           setEventDataById(response.data);
